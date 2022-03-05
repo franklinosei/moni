@@ -17,7 +17,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late Widget pageToRender = HomeScreen();
+  late Widget pageToRender = Home();
 
   @override
   void initState() {
@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'NotoSans',
-        // primaryColor: legonBlue,
+       
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: pageToRender,

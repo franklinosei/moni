@@ -19,7 +19,7 @@ class ClusterModel {
 
   factory ClusterModel.fromJson(Map<String, dynamic> json) {
     return ClusterModel(
-      repaymentRate: json['cluster_repayment_rate'],
+      repaymentRate: json['cluster_repayment_rate'] * 100,
       repaymentDay: json['cluster_repayment_day'],
       clusterPurseBalance: json['cluster_purse_balance'],
       // interestEarnedToday: json['interestEarnedToday'],

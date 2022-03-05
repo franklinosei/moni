@@ -1,13 +1,13 @@
 class InActiveAgents {
-  List<InActiveLoanModel>? activeLoans;
+  List<InActiveLoanModel>? inactiveLoans;
 
   InActiveAgents({
-    this.activeLoans,
+    this.inactiveLoans,
   });
 
   factory InActiveAgents.fromJson(Map<String, dynamic> json) {
     return InActiveAgents(
-      activeLoans: json['inactive_agents'] != null
+      inactiveLoans: json['inactive_agents'] != null
           ? (json['inactive_agents'] as List)
               .map((i) => InActiveLoanModel.fromJson(i))
               .toList()
