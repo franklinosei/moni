@@ -20,15 +20,15 @@ class ActiveLoanCard extends StatelessWidget {
         Flexible(
           child: Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50),
+              borderRadius: BorderRadius.circular(20),
               color: Colors.grey[200],
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.network(
                 'https://unsplash.com/photos/2EGNqazbAMk/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MXx8YmxhY2slMjBndXl8ZW58MHx8fHwxNjQ2NDAzMzUw&force=true&w=640',
-                height: 80,
-                width: 80,
+                height: 70,
+                width: 70,
                 fit: BoxFit.cover,
               ),
             ),
@@ -39,22 +39,23 @@ class ActiveLoanCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text('$title'),
+                Text(title),
                 Text(
                   '\t$loanDuration days to due date',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.grey,
                   ),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
               'N$loanAmount Active loan',
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.green,
+                fontWeight: FontWeight.w600,
               ),
             ),
           ],

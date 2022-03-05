@@ -15,18 +15,25 @@ class MembersWidget extends StatelessWidget {
     initialExpanded: true,
   );
 
+  final expandController_1 = ExpandableController(
+    initialExpanded: true,
+  );
+
   _buildLoanList(List<ActiveLoanModel> list) {
     List<Widget> listWidgets = [];
     for (var i = 0; i < list.length; i++) {
       listWidgets.add(
         Column(
           children: [
+            const Divider(),
+            const SizedBox(
+              height: 10,
+            ),
             ActiveLoanCard(
               title: '${list[i].agentFirstName} ${list[i].agentLastName}',
               loanAmount: list[i].loanAmount,
               loanDuration: list[i].daysToDueDate,
             ),
-            const Divider(),
           ],
         ),
       );
@@ -43,10 +50,13 @@ class MembersWidget extends StatelessWidget {
       listWidgets.add(
         Column(
           children: [
+            const Divider(),
+            const SizedBox(
+              height: 10,
+            ),
             InactiveLoanCard(
               title: '${list[i].agentFirstName} ${list[i].agentLastName}',
             ),
-            const Divider(),
           ],
         ),
       );
@@ -71,6 +81,7 @@ class MembersWidget extends StatelessWidget {
               theme: const ExpandableThemeData(
                 headerAlignment: ExpandablePanelHeaderAlignment.center,
                 collapseIcon: Icons.minimize,
+                expandIcon: Icons.add,
               ),
               header: const Text(
                 'Active Loans',
@@ -88,14 +99,19 @@ class MembersWidget extends StatelessWidget {
                 ),
               ),
             ),
-            const Divider(
-              color: Colors.black,
+            const SizedBox(
+              height: 15,
+            ),
+            const Divider(),
+            const SizedBox(
+              height: 15,
             ),
             ExpandablePanel(
-              controller: expandController,
+              controller: expandController_1,
               theme: const ExpandableThemeData(
                 headerAlignment: ExpandablePanelHeaderAlignment.center,
                 collapseIcon: Icons.minimize,
+                expandIcon: Icons.add,
               ),
               header: const Text(
                 'Inactive Loans',

@@ -17,7 +17,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late Widget pageToRender = Home();
+  late Widget pageToRender = const Home();
 
   @override
   void initState() {

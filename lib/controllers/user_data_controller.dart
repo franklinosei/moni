@@ -44,7 +44,6 @@ class UserDataController extends GetxController {
         );
         inActiveLoans.value = InActiveAgents.fromJson(response.data['data']);
 
-        print(inActiveLoans.value.inactiveLoans!.length);
         hasData(true);
       } else {
         httpReponse.success = false;

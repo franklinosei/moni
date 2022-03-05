@@ -6,7 +6,7 @@ import 'package:moni/views/home/widgets/members_widget.dart';
 import 'package:moni/views/loading/loading.dart';
 
 class Home extends StatefulWidget {
-  Home({Key? key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
@@ -49,6 +49,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                           padding: const EdgeInsets.symmetric(horizontal: 20),
                           decoration: const BoxDecoration(
                             color: Colors.black87,
+                            image: DecorationImage(
+                              image: AssetImage("assets/bg.jpg"),
+                              fit: BoxFit.cover,
+                            ),
                           ),
                           child: Column(
                             children: [
@@ -137,7 +141,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                                   style: const TextStyle(
                                                     fontSize: 12,
                                                     fontWeight: FontWeight.bold,
-                                                    color: Colors.yellow,
+                                                    color: Colors.green,
                                                   ),
                                                 ),
                                               ],
@@ -150,7 +154,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                       child: Container(
                                         decoration: BoxDecoration(
                                           borderRadius:
-                                              BorderRadius.circular(50),
+                                              BorderRadius.circular(20),
                                           color: Colors.grey[200],
                                         ),
                                         child: ClipRRect(
@@ -158,8 +162,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                               BorderRadius.circular(20),
                                           child: Image.network(
                                             'https://unsplash.com/photos/2EGNqazbAMk/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MXx8YmxhY2slMjBndXl8ZW58MHx8fHwxNjQ2NDAzMzUw&force=true&w=640',
-                                            height: 80,
-                                            width: 80,
+                                            height: 70,
+                                            width: 70,
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -167,6 +171,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                     ),
                                   ],
                                 ),
+                              ),
+                              const SizedBox(
+                                height: 10,
                               ),
                               const Divider(
                                 color: Colors.white,
@@ -299,20 +306,14 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       bottom: PreferredSize(
                         preferredSize: const Size.fromHeight(50),
                         child: Container(
-                          color: const Color.fromARGB(255, 243, 226, 228),
+                          color: const Color.fromARGB(255, 241, 233, 234),
                           child: TabBar(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 0,
                             ),
                             labelColor: Colors.red,
-                            // indicator: const BoxDecoration(
-                            //   color: Colors.white,
-                            // ),
-                            // automaticIndicatorColorAdjustment: true,
                             unselectedLabelColor: Colors.black,
-
                             indicatorColor: Colors.red,
-
                             tabs: const [
                               Tab(
                                 text: 'Members(9)',

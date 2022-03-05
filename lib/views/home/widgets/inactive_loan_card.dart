@@ -11,7 +11,7 @@ class InactiveLoanCard extends StatelessWidget {
       children: [
         Flexible(
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: Colors.transparent,
@@ -20,8 +20,8 @@ class InactiveLoanCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               child: Image.network(
                 'https://unsplash.com/photos/2EGNqazbAMk/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MXx8YmxhY2slMjBndXl8ZW58MHx8fHwxNjQ2NDAzMzUw&force=true&w=640',
-                height: 80,
-                width: 80,
+                height: 70,
+                width: 70,
                 fit: BoxFit.cover,
               ),
             ),
@@ -32,13 +32,18 @@ class InactiveLoanCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text('$title'),
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 15,
+                  ),
+                ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               'No active loan',
               style: TextStyle(
                 color: Colors.grey,

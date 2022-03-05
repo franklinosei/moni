@@ -10,7 +10,7 @@ Future<bool> isConnected() async {
     // ignore: nullable_type_in_catch_clause
   } on SocketException catch (_) {
     return false;
-  } on Exception catch (e) {
+  } on Exception {
     return false;
   }
 }
